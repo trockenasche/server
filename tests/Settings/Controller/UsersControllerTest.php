@@ -2381,7 +2381,7 @@ class UsersControllerTest extends \Test\TestCase {
 			[
 				'status' => 'error',
 				'data' => [
-					'message' => 'Unable to disable user.',
+					'message' => 'Error while disabling user.',
 				],
 			],
 			Http::STATUS_FORBIDDEN
@@ -2456,7 +2456,7 @@ class UsersControllerTest extends \Test\TestCase {
 			[
 				'status' => 'error',
 				'data' => [
-					'message' => 'Unable to disable user.',
+					'message' => 'Error while disabling user.',
 				],
 			]
 		);
@@ -2493,7 +2493,7 @@ class UsersControllerTest extends \Test\TestCase {
 			[
 				'status' => 'error',
 				'data' => [
-					'message' => 'Unable to disable user.',
+					'message' => 'Error while disabling user.',
 				],
 			]
 		);
@@ -2595,7 +2595,7 @@ class UsersControllerTest extends \Test\TestCase {
 			[
 				'status' => 'error',
 				'data' => [
-					'message' => 'Unable to enable user.',
+					'message' => 'Error while enabling user.',
 				],
 			],
 			Http::STATUS_FORBIDDEN
@@ -2670,7 +2670,7 @@ class UsersControllerTest extends \Test\TestCase {
 			[
 				'status' => 'error',
 				'data' => [
-					'message' => 'Unable to enable user.',
+					'message' => 'Error while enabling user.',
 				],
 			]
 		);
@@ -2707,7 +2707,7 @@ class UsersControllerTest extends \Test\TestCase {
 			[
 				'status' => 'error',
 				'data' => [
-					'message' => 'Unable to enable user.',
+					'message' => 'Error while enabling user.',
 				],
 			]
 		);
