@@ -413,7 +413,7 @@ class Server extends ServerContainer implements IServerContainer {
 		});
 		$this->registerService('CssManager', function (Server $c) {
 			return new CssManager(
-				$c->getAppDataDir('server')
+				$c->getAppDataDir('css')
 			);
 		});
 		$this->registerService('Logger', function (Server $c) {
