@@ -414,7 +414,7 @@ class FilesystemTest extends \Test\TestCase {
 		$homeMount = \OC\Files\Filesystem::getStorage('/' . $userId . '/');
 
 		$this->assertTrue($homeMount->instanceOfStorage('\OCP\Files\IHomeStorage'));
-		if (getenv('RUN_OBJECTSTORE_TESTS')) {
+		if (getenv('RUN_OBJECTSTORE_TESTS') || getenv('OBJECT_STORE')) {
 			$this->assertTrue($homeMount->instanceOfStorage('\OC\Files\ObjectStore\HomeObjectStoreStorage'));
 			$this->assertEquals('object::user:' . $userId, $homeMount->getId());
 		} else {
@@ -431,7 +431,7 @@ class FilesystemTest extends \Test\TestCase {
 	 * for the user's mount point
 	 */
 	public function testLegacyHomeMount() {
-		if (getenv('RUN_OBJECTSTORE_TESTS')) {
+		if (getenv('RUN_OBJECTSTORE_TESTS') || getenv('OBJECT_STORE')) {
 			$this->markTestSkipped('legacy storage unrelated to objectstore environments');
 		}
 		$datadir = \OC::$server->getConfig()->getSystemValue("datadirectory", \OC::$SERVERROOT . "/data");
