@@ -167,7 +167,7 @@ function execute_tests {
 	git checkout tests/data
 
 	# reset data directory
-	rm -rf "$DATADIR"
+	rm -rf "$DATADIR"f
 	mkdir "$DATADIR"
 
 	if [ "$PRIMARY_STORAGE_CONFIG" == "swift" ] ; then
@@ -343,6 +343,9 @@ function execute_tests {
 	fi
 	if [ "$TEST_SELECTION" == "NODB" ]; then
 		GROUP='--exclude-group DB,SLOWDB'
+	fi
+	if [ "$TEST_SELECTION" == "PRIMARY-s3" ]; then
+		GROUP='--group PRIMARY-s3'
 	fi
 
 	COVER=''
