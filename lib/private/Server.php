@@ -1007,7 +1007,8 @@ class Server extends ServerContainer implements IServerContainer {
 	 */
 	public function setSession(\OCP\ISession $session) {
 		$this->query(SessionStorage::class)->setSession($session);
-		return $this->query('UserSession')->setSession($session);
+		$this->query('UserSession')->setSession($session);
+		$this->query(Store::class)->setSession($session);
 	}
 
 	/**
