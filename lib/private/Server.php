@@ -411,7 +411,7 @@ class Server extends ServerContainer implements IServerContainer {
 				$c->getConfig()
 			);
 		});
-		$this->registerService('CssManager', function (Server $c) {
+		$this->registerService(CssManager::class, function (Server $c) {
 			return new CssManager(
 				$c->getAppDataDir('css')
 			);
@@ -903,7 +903,7 @@ class Server extends ServerContainer implements IServerContainer {
 	 * @return \OCP\ICssManager
 	 */
 	public function getCssManager() {
-		return $this->query('CssManager');
+		return $this->query(CssManager::class);
 	}
 
 	/**
