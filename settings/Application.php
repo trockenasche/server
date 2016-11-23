@@ -170,7 +170,11 @@ class Application extends App {
 				$c->query('URLGenerator'),
 				$c->query('OCP\\App\\IAppManager'),
 				$c->query('OCP\\IAvatarManager'),
-				$c->query('AccountManager')
+				$c->query('AccountManager'),
+				$c->query('OCP\\Security\\ISecureRandom'),
+				$c->query('OCP\\AppFramework\\Utility\\ITimeFactory'),
+//				new TimeFactory(),
+				$c->query('Crypto')
 			);
 		});
 		$container->registerService('LogSettingsController', function(IContainer $c) {
