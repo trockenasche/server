@@ -362,8 +362,8 @@ class LoginControllerTest extends TestCase {
 			->method('checkPassword')
 			->will($this->returnValue($user));
 		$this->userSession->expects($this->once())
-			->method('login')
-			->with($loginName, $password);
+			->method('completeLogin')
+			->with($user, ['loginName' => $loginName, 'password' => $password]);
 		$this->userSession->expects($this->once())
 			->method('createSessionToken')
 			->with($this->request, $user->getUID(), $loginName, $password, false);
@@ -412,8 +412,8 @@ class LoginControllerTest extends TestCase {
 			->method('checkPassword')
 			->will($this->returnValue($user));
 		$this->userSession->expects($this->once())
-			->method('login')
-			->with($loginName, $password);
+			->method('completeLogin')
+			->with($user, ['loginName' => $loginName, 'password' => $password]);
 		$this->userSession->expects($this->once())
 			->method('createSessionToken')
 			->with($this->request, $user->getUID(), $loginName, $password, true);
@@ -596,8 +596,8 @@ class LoginControllerTest extends TestCase {
 			->method('checkPassword')
 			->will($this->returnValue($user));
 		$this->userSession->expects($this->once())
-			->method('login')
-			->with('john@doe.com', $password);
+			->method('completeLogin')
+			->with($user, ['loginName' => 'john@doe.com', 'password' => $password]);
 		$this->userSession->expects($this->once())
 			->method('createSessionToken')
 			->with($this->request, $user->getUID(), 'john@doe.com', $password, false);
@@ -663,8 +663,8 @@ class LoginControllerTest extends TestCase {
 			->method('checkPassword')
 			->will($this->returnValue($user));
 		$this->userSession->expects($this->once())
-			->method('login')
-			->with('john@doe.com', $password);
+			->method('completeLogin')
+			->with($user, ['loginName' => 'john@doe.com', 'password' => $password]);
 		$this->userSession->expects($this->once())
 			->method('createSessionToken')
 			->with($this->request, $user->getUID(), 'john@doe.com', $password, false);
