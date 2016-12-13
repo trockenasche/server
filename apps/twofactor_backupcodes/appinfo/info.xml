@@ -16,4 +16,16 @@
 	<dependencies>
 		<nextcloud min-version="11" max-version="11" />
 	</dependencies>
+
+	<activity>
+		<filters>
+			<filter>OCA\TwoFactorBackupCodes\Activity\GenericFilter</filter>
+		</filters>
+		<settings>
+			<setting>OCA\TwoFactorBackupCodes\Activity\GenericSetting</setting>
+		</settings>
+		<providers>
+			<provider>OCA\TwoFactorBackupCodes\Activity\GenericProvider</provider>
+		</providers>
+	</activity>
 </info>
